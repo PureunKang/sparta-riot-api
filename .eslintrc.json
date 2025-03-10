@@ -4,7 +4,6 @@
     "no-undef": "off",
     "spaced-comment": "off",
     "no-unused-vars": "error",
-    "no-console": "warn",
-    "quotes": "off"
+    "no-console": "warn"
   }
 }
