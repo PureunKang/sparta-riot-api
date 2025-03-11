@@ -1,4 +1,5 @@
 export type Item = {
+  data: Array<string | number | boolean>
   name: string
   description: string
   colloq: string

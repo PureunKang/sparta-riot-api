@@ -5,8 +5,7 @@ import Link from "next/link"
 // import Image from "next/image"
 
 const ChampionCard = async () => {
-  const rawData = await fetchChampionList()
-  const championList = Object.values(rawData.data)
+  const championList = await fetchChampionList()
 
   return (
     <>

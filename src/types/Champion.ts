@@ -1,4 +1,5 @@
 export type Champion = {
+  data: Array<string | number>
   version: string
   id: string
   key: string

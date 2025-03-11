@@ -4,7 +4,7 @@
 import { Champion } from "@/types/Champion"
 import { Item } from "@/types/Item"
 
-export const fetchChampionList = async (): Promise<Champion> => {
+export const fetchChampionList = async (): Promise<Champion[]> => {
   const res = await fetch(
     "https://ddragon.leagueoflegends.com/cdn/15.5.1/data/ko_KR/champion.json",
     {
@@ -13,13 +13,13 @@ export const fetchChampionList = async (): Promise<Champion> => {
       },
     },
   )
-  const data = await res.json()
-  return data
+  const { data } = await res.json()
+  return Object.values(data)
 }
 
-export const fetchChampionDetailList = async (): Promise<Champion> => {
+export const fetchChampionDetailList = async (id: string): Promise<Champion> => {
   const res = await fetch(
-    "https://ddragon.leagueoflegends.com/cdn/15.5.1/data/ko_KR/champion.json",
+    `https://ddragon.leagueoflegends.com/cdn/15.5.1/data/ko_KR/champion/${id}.json`,
     {
       cache: "no-store",
     },
@@ -28,10 +28,10 @@ export const fetchChampionDetailList = async (): Promise<Champion> => {
   return data
 }
 
-export const fetchItemList = async (): Promise<Item> => {
+export const fetchItemList = async (): Promise<Item[]> => {
   const res = await fetch("https://ddragon.leagueoflegends.com/cdn/15.5.1/data/ko_KR/item.json", {
     cache: "force-cache",
   })
-  const data = await res.json()
-  return data
+  const { data } = await res.json()
+  return Object.values(data)
 }

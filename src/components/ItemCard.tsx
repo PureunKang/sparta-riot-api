@@ -4,14 +4,13 @@ import { fetchItemList } from "@/utils/serverApi"
 // import Image from "next/image"
 
 const ItemCard = async () => {
-  const rawData = await fetchItemList()
-  const itemList = Object.values(rawData.data)
+  const itemList = await fetchItemList()
 
   return (
     <>
       {itemList.map((i) => {
         return (
-          <Card key={i.id}>
+          <Card key={i.name}>
             <CardHeader>
               <CardTitle>{i.name}</CardTitle>
               <CardDescription>가격 | {i.gold.total}</CardDescription>
