@@ -1,11 +1,12 @@
 import React from "react"
-import { fetchChampionList } from "@/utils/serverApi"
-import { Champion } from "@/types/Champion"
+import ChampionCard from "@/components/ChampionCard"
 
 const page = () => {
-  // fetchChampionList().then((data) => console.log("데이터확인", data))
-
-  return <div>챔피언 목록</div>
+  return (
+    <>
+      <ChampionCard />
+    </>
+  )
 }
 
 export default page

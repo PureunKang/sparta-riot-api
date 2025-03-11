@@ -1,7 +1,10 @@
 // 추후 Server Action으로 변경 위한 선언
 "use server"
 
-export const fetchChampionList = async () => {
+import { Champion } from "@/types/Champion"
+import { Item } from "@/types/Item"
+
+export const fetchChampionList = async (): Promise<Champion> => {
   const res = await fetch(
     "https://ddragon.leagueoflegends.com/cdn/15.5.1/data/ko_KR/champion.json",
     {
@@ -14,7 +17,7 @@ export const fetchChampionList = async () => {
   return data
 }
 
-export const fetchItemList = async () => {
+export const fetchItemList = async (): Promise<Item> => {
   const res = await fetch("https://ddragon.leagueoflegends.com/cdn/15.5.1/data/ko_KR/item.json", {
     cache: "force-cache",
   })
