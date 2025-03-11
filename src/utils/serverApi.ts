@@ -13,3 +13,11 @@ export const fetchChampionList = async () => {
   const data = await res.json()
   return data
 }
+
+export const fetchItemList = async () => {
+  const res = await fetch("https://ddragon.leagueoflegends.com/cdn/15.5.1/data/ko_KR/item.json", {
+    cache: "force-cache",
+  })
+  const data = await res.json()
+  return data
+}
