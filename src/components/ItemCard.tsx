@@ -1,7 +1,7 @@
 import React from "react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { fetchItemList } from "@/utils/serverApi"
-import Image from "next/image"
+// import Image from "next/image"
 
 const ItemCard = async () => {
   const rawData = await fetchItemList()

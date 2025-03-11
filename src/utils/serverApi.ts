@@ -17,6 +17,17 @@ export const fetchChampionList = async (): Promise<Champion> => {
   return data
 }
 
+export const fetchChampionDetailList = async (): Promise<Champion> => {
+  const res = await fetch(
+    "https://ddragon.leagueoflegends.com/cdn/15.5.1/data/ko_KR/champion.json",
+    {
+      cache: "no-store",
+    },
+  )
+  const data = await res.json()
+  return data
+}
+
 export const fetchItemList = async (): Promise<Item> => {
   const res = await fetch("https://ddragon.leagueoflegends.com/cdn/15.5.1/data/ko_KR/item.json", {
     cache: "force-cache",
