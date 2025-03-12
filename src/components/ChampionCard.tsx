@@ -6,7 +6,7 @@ import Image from "next/image"
 
 const ChampionCard = async () => {
   const championList = await fetchChampionList()
-  const imageBaseUrl = "https://ddragon.leagueoflegends.com/cdn/15.5.1/img/champion/"
+  const championImageBaseUrl = "https://ddragon.leagueoflegends.com/cdn/15.5.1/img/champion/"
 
   return (
     <>
@@ -19,7 +19,10 @@ const ChampionCard = async () => {
                 <CardDescription>{c.title}</CardDescription>
               </CardHeader>
               <CardContent>
-                <Image src={`${imageBaseUrl}${c.image.full}`} alt="제공 이미지가 없습니다." />
+                <Image
+                  src={`${championImageBaseUrl}${c.image.full}`}
+                  alt="제공 이미지가 없습니다."
+                />
               </CardContent>
             </Card>
           </Link>
