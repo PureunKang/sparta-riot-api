@@ -2,10 +2,11 @@ import React from "react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { fetchChampionList } from "@/utils/serverApi"
 import Link from "next/link"
-// import Image from "next/image"
+import Image from "next/image"
 
 const ChampionCard = async () => {
   const championList = await fetchChampionList()
+  const imageBaseUrl = "https://ddragon.leagueoflegends.com/cdn/15.5.1/img/champion/"
 
   return (
     <>
@@ -18,7 +19,7 @@ const ChampionCard = async () => {
                 <CardDescription>{c.title}</CardDescription>
               </CardHeader>
               <CardContent>
-                <p>이미지 넣을 곳</p>
+                <Image src={`${imageBaseUrl}${c.image.full}`} alt="제공 이미지가 없습니다." />
               </CardContent>
             </Card>
           </Link>
