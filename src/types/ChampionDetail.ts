@@ -9,13 +9,15 @@ export type ChampionDetail = {
     sprite: string
   }
   lore: string
-  spells: Array<{
-    id: string
-    name: string
-    description: string
-    image: {
-      full: string
-      sprite: string
-    }
-  }>
+  spells: ChampionSkillset[]
+}
+
+export type ChampionSkillset = {
+  id: string
+  name: string
+  description: string
+  image: {
+    full: string
+    sprite: string
+  }
 }

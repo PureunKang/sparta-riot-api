@@ -1,5 +1,6 @@
 import React from "react"
 import { fetchChampionDetailList } from "@/utils/serverApi"
+import SkillsetCard from "./SkillsetCard"
 
 type ChampionDetailProps = {
   params: {
@@ -21,11 +22,7 @@ const ChampionDetail = async ({ params }: ChampionDetailProps) => {
             <div>{cd.lore}</div>
             <div>
               {cd.spells.map((skill) => (
-                <div key={skill.id}>
-                  <h3>{skill.name}</h3>
-                  <p>이미지</p>
-                  <p>{skill.description}</p>
-                </div>
+                <SkillsetCard key={skill.id} skill={skill} />
               ))}
             </div>
           </div>
