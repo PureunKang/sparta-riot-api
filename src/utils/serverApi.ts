@@ -2,6 +2,7 @@
 "use server"
 
 import { Champion } from "@/types/Champion"
+import { ChampionDetail } from "@/types/ChampionDetail"
 import { Item } from "@/types/Item"
 
 // 챔피언
@@ -19,15 +20,15 @@ export const fetchChampionList = async (): Promise<Champion[]> => {
 }
 
 // 챔피언 상세
-export const fetchChampionDetailList = async (id: string): Promise<Champion> => {
+export const fetchChampionDetailList = async (id: string): Promise<ChampionDetail[]> => {
   const res = await fetch(
     `https://ddragon.leagueoflegends.com/cdn/15.5.1/data/ko_KR/champion/${id}.json`,
     {
       cache: "no-store",
     },
   )
-  const data = await res.json()
-  return data
+  const { data } = await res.json()
+  return Object.values(data)
 }
 
 // 아이템
