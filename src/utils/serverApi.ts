@@ -1,6 +1,3 @@
-// 추후 Server Action으로 변경 위한 선언
-"use server"
-
 import { Champion } from "@/types/Champion"
 import { ChampionDetail } from "@/types/ChampionDetail"
 import { Item } from "@/types/Item"
