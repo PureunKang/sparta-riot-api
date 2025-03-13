@@ -19,6 +19,15 @@ const ChampionDetail = async ({ params }: ChampionDetailProps) => {
             <h2>{cd.title}</h2>
             <p>이미지</p>
             <div>{cd.lore}</div>
+            <div>
+              {cd.spells.map((skill) => (
+                <div key={skill.id}>
+                  <h3>{skill.name}</h3>
+                  <p>이미지</p>
+                  <p>{skill.description}</p>
+                </div>
+              ))}
+            </div>
           </div>
         )
       })}
