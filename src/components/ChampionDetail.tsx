@@ -9,17 +9,19 @@ type ChampionDetailProps = {
 
 const ChampionDetail = async ({ params }: ChampionDetailProps) => {
   const championDetail = await fetchChampionDetailList(params.id)
-  console.log("데이터확인", championDetail)
 
   return (
     <>
-      {/* {championDetail.map((cd) => {
+      {championDetail.map((cd) => {
         return (
           <div key={cd.id}>
             <h1>{cd.name}</h1>
+            <h2>{cd.title}</h2>
+            <p>이미지</p>
+            <div>{cd.lore}</div>
           </div>
         )
-      })} */}
+      })}
     </>
   )
 }
