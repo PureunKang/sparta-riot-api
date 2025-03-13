@@ -1,7 +1,8 @@
+"use client"
 import React from "react"
 
 const page = () => {
-  return <div>로테이션</div>
+  return <>로테이션페이지</>
 }
 
 export default page

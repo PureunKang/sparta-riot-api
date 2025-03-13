@@ -1,7 +1,7 @@
 import { Champion } from "@/types/Champion"
-import { NextResponse } from "next/server"
+import { NextResponse, NextRequest } from "next/server"
 
-export async function GET(request: Request) {
+export async function GET(request: NextRequest) {
   const apiKey = process.env.RIOT_API_KEY
 
   // 이달의 챔피언 키값 불러오기
@@ -17,7 +17,7 @@ export async function GET(request: Request) {
     "https://ddragon.leagueoflegends.com/cdn/15.5.1/data/ko_KR/champion.json",
   )
   const ddragonData = await ddragonRes.json()
-  const allChampions = Object.values(ddragonData.data)
+  const allChampions = Object.values(ddragonData.data) as Champion[]
 
   // 불러온 챔피언 데이터에서 일치하는 키값 골라내기
   const championInfo = championIds
