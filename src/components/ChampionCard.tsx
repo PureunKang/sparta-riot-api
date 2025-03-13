@@ -3,10 +3,10 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { fetchChampionList } from "@/utils/serverApi"
 import Link from "next/link"
 import Image from "next/image"
+import { CHAMPION_IMAGE_BASE_URL } from "@/constants"
 
 const ChampionCard = async () => {
   const championList = await fetchChampionList()
-  const championImageBaseUrl = "https://ddragon.leagueoflegends.com/cdn/15.5.1/img/champion/"
 
   return (
     <>
@@ -20,7 +20,7 @@ const ChampionCard = async () => {
               </CardHeader>
               <CardContent>
                 <Image
-                  src={`${championImageBaseUrl}${c.image.full}`}
+                  src={`${CHAMPION_IMAGE_BASE_URL}${c.image.full}`}
                   alt="제공 이미지가 없습니다."
                 />
               </CardContent>

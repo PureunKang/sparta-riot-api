@@ -2,10 +2,10 @@ import React from "react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { fetchItemList } from "@/utils/serverApi"
 import Image from "next/image"
+import { ITEM_IMAGE_BASE_URL } from "@/constants"
 
 const ItemCard = async () => {
   const itemList = await fetchItemList()
-  const itemImageBaseUrl = "https://ddragon.leagueoflegends.com/cdn/15.5.1/img/item/"
 
   return (
     <>
@@ -18,7 +18,7 @@ const ItemCard = async () => {
               <CardDescription>팔때 | {i.gold.sell}</CardDescription>
             </CardHeader>
             <CardContent>
-              <Image src={`${itemImageBaseUrl}${i.image.full}`} alt="제공 이미지가 없습니다." />
+              <Image src={`${ITEM_IMAGE_BASE_URL}${i.image.full}`} alt="제공 이미지가 없습니다." />
             </CardContent>
           </Card>
         )
