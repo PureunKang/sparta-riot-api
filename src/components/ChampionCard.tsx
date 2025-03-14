@@ -22,6 +22,8 @@ const ChampionCard = async () => {
                 <Image
                   src={`${CHAMPION_IMAGE_BASE_URL}${c.image.full}`}
                   alt="제공 이미지가 없습니다."
+                  width={50}
+                  height={50}
                 />
               </CardContent>
             </Card>

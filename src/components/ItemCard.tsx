@@ -18,7 +18,12 @@ const ItemCard = async () => {
               <CardDescription>팔때 | {i.gold.sell}</CardDescription>
             </CardHeader>
             <CardContent>
-              <Image src={`${ITEM_IMAGE_BASE_URL}${i.image.full}`} alt="제공 이미지가 없습니다." />
+              <Image
+                src={`${ITEM_IMAGE_BASE_URL}${i.image.full}`}
+                alt="제공 이미지가 없습니다."
+                width={50}
+                height={50}
+              />
             </CardContent>
           </Card>
         )
