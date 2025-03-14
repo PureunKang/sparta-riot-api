@@ -1,12 +1,15 @@
 import ItemCard from "@/components/ItemCard"
+import { fetchItemList } from "@/utils/serverApi"
 import React from "react"
 
-const page = () => {
+const ItemPage = async () => {
+  const itemList = await fetchItemList()
+
   return (
     <>
-      <ItemCard />
+      <ItemCard itemList={itemList} />
     </>
   )
 }
 
-export default page
+export default ItemPage

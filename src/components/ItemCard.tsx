@@ -1,12 +1,11 @@
 import React from "react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { fetchItemList } from "@/utils/serverApi"
 import Image from "next/image"
 import { ITEM_IMAGE_BASE_URL } from "@/constants"
+import { Item } from "@/types/Item"
+import parse from "html-react-parser"
 
-const ItemCard = async () => {
-  const itemList = await fetchItemList()
-
+const ItemCard = ({ itemList }: { itemList: Item[] }) => {
   return (
     <>
       {itemList.map((i) => {
@@ -16,7 +15,7 @@ const ItemCard = async () => {
               <CardTitle>{i.name}</CardTitle>
               <CardDescription>가격 | {i.gold.total}</CardDescription>
               <CardDescription>팔때 | {i.gold.sell}</CardDescription>
-              <div>{i.description}</div>
+              <div>{parse(i.description)}</div>
             </CardHeader>
             <CardContent>
               <Image
