@@ -7,7 +7,7 @@ export async function GET() {
     "https://br1.api.riotgames.com/lol/platform/v3/champion-rotations",
     {
       headers: {
-        "X-Riot-Token": process.env.RIOT_API_KEY!,
+        "X-Riot-Token": process.env.NEXT_PUBLIC_RIOT_API_KEY!,
       },
     },
   )

@@ -1,28 +1,16 @@
 "use client"
 
-import { useEffect, useState } from "react"
 import React from "react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import Image from "next/image"
 import { CHAMPION_IMAGE_BASE_URL } from "@/constants"
-
-type SelectedChampion = {
-  name: string
-  title: string
-  image: string
-}
+import useChampions from "@/hooks/queries"
 
 const RotationPage = () => {
-  const [champions, setChampions] = useState<SelectedChampion[]>([])
+  const { data: champions, isPending, isError } = useChampions()
 
-  useEffect(() => {
-    async function fetchSelectedChampions() {
-      const res = await fetch("/api/rotation")
-      const data = await res.json()
-      setChampions(data)
-    }
-    fetchSelectedChampions()
-  }, [])
+  if (isPending) return <div>로딩중</div>
+  if (isError) return <div>불러오기 실패</div>
 
   return (
     <>
