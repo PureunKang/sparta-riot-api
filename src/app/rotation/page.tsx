@@ -5,11 +5,6 @@ import React from "react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import Image from "next/image"
 import { CHAMPION_IMAGE_BASE_URL } from "@/constants"
-// {
-//   "name": "알리스타",
-//   "title": "미노타우로스",
-//   "image": "Alistar.png"
-// },
 
 type SelectedChampion = {
   name: string
