@@ -7,7 +7,7 @@ type PageProps = {
   }
 }
 
-const page = ({ params }: PageProps) => {
+const ChampionDetailPage = ({ params }: PageProps) => {
   return (
     <>
       <ChampionDetail params={params} />
@@ -15,4 +15,4 @@ const page = ({ params }: PageProps) => {
   )
 }
 
-export default page
+export default ChampionDetailPage
