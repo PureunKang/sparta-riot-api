@@ -1,13 +1,11 @@
 import React from "react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { fetchChampionList } from "@/utils/serverApi"
 import Link from "next/link"
 import Image from "next/image"
 import { CHAMPION_IMAGE_BASE_URL } from "@/constants"
+import { Champion } from "@/types/Champion"
 
-const ChampionCard = async () => {
-  const championList = await fetchChampionList()
-
+const ChampionCard = ({ championList }: { championList: Champion[] }) => {
   return (
     <>
       {championList.map((c) => {

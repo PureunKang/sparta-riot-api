@@ -1,12 +1,15 @@
 import React from "react"
 import ChampionCard from "@/components/ChampionCard"
+import { fetchChampionList } from "@/utils/serverApi"
 
-const page = () => {
+const ChampionPage = async () => {
+  const championList = await fetchChampionList()
+
   return (
     <>
-      <ChampionCard />
+      <ChampionCard championList={championList} />
     </>
   )
 }
 
-export default page
+export default ChampionPage
