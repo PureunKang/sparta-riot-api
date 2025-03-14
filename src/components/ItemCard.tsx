@@ -16,6 +16,7 @@ const ItemCard = async () => {
               <CardTitle>{i.name}</CardTitle>
               <CardDescription>가격 | {i.gold.total}</CardDescription>
               <CardDescription>팔때 | {i.gold.sell}</CardDescription>
+              <div>{i.description}</div>
             </CardHeader>
             <CardContent>
               <Image

@@ -17,7 +17,7 @@ type SelectedChampion = {
   image: string
 }
 
-const page = () => {
+const RotationPage = () => {
   const [champions, setChampions] = useState<SelectedChampion[]>([])
 
   useEffect(() => {
@@ -53,4 +53,4 @@ const page = () => {
   )
 }
 
-export default page
+export default RotationPage

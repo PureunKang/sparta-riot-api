@@ -1,13 +1,15 @@
 import { Champion } from "@/types/Champion"
-import { NextResponse, NextRequest } from "next/server"
+import { NextResponse } from "next/server"
 
-export async function GET(request: NextRequest) {
-  const apiKey = process.env.RIOT_API_KEY
-
+export async function GET() {
   // 이달의 챔피언 키값 불러오기
   const rotationsRes = await fetch(
-    `https://br1.api.riotgames.com/lol/platform/v3/champion-rotations?api_key=${apiKey}`,
-    {},
+    "https://br1.api.riotgames.com/lol/platform/v3/champion-rotations",
+    {
+      headers: {
+        "X-Riot-Token": process.env.RIOT_API_KEY!,
+      },
+    },
   )
   const rotationData = await rotationsRes.json()
   const championIds: Array<number> = rotationData.freeChampionIds
