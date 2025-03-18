@@ -8,26 +8,29 @@ import { Champion } from "@/types/Champion"
 const ChampionCard = ({ championList }: { championList: Champion[] }) => {
   return (
     <>
-      {championList.map((c) => {
-        return (
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-4">
+        {championList.map((c) => (
           <Link key={c.id} href={`/champions/${c.id}`}>
-            <Card>
+            <Card className="hover:shadow-lg transition-shadow duration-200">
               <CardHeader>
-                <CardTitle>{c.name}</CardTitle>
-                <CardDescription>{c.title}</CardDescription>
+                <CardTitle className="text-lg text-center">{c.name}</CardTitle>
+                <CardDescription className="text-center text-sm text-muted-foreground">
+                  {c.title}
+                </CardDescription>
               </CardHeader>
-              <CardContent>
+              <CardContent className="flex justify-center">
                 <Image
                   src={`${CHAMPION_IMAGE_BASE_URL}${c.image.full}`}
-                  alt="제공 이미지가 없습니다."
-                  width={50}
-                  height={50}
+                  alt={`${c.name} 이미지`}
+                  width={100}
+                  height={100}
+                  className="rounded-md"
                 />
               </CardContent>
             </Card>
           </Link>
-        )
-      })}
+        ))}
+      </div>
     </>
   )
 }
