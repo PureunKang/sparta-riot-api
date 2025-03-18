@@ -8,7 +8,11 @@ const ChampionPage = async () => {
   return (
     <>
       <div className="container mx-auto p-6">
-        <h1 className="text-2xl font-bold mb-4">챔피언 목록</h1>
+        <div className="text-center mb-8">
+          <p className="text-gray-700">
+            140여 명의 챔피언 중 자신의 플레이 스타일에 어울리는 챔피언을 찾아보세요!
+          </p>
+        </div>
         <ChampionCard championList={championList} />
       </div>
     </>
