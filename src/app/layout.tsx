@@ -34,7 +34,7 @@ export default function RootLayout({
                   </Link>
                 </li>
                 <li>
-                  <Link href="/rotaion" className="hover:underline">
+                  <Link href="/rotation" className="hover:underline">
                     챔피언 로테이션
                   </Link>
                 </li>
