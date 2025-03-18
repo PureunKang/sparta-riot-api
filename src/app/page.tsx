@@ -22,7 +22,7 @@ export default function Home() {
                 height={500}
                 className="object-cover w-full h-auto"
               />
-              <div className="absolute bottom-0 left-0 right-0 bg-slate-900 bg-opacity-90 text-white text-center py-2">
+              <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-90 text-white text-center py-2">
                 챔피언 목록
               </div>
             </div>
@@ -36,7 +36,7 @@ export default function Home() {
                 height={500}
                 className="object-cover w-full h-auto"
               />
-              <div className="absolute bottom-0 left-0 right-0 bg-slate-900 bg-opacity-90 text-white text-center py-2">
+              <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-90 text-white text-center py-2">
                 아이템 목록
               </div>
             </div>
@@ -50,7 +50,7 @@ export default function Home() {
                 height={500}
                 className="object-cover w-full h-auto"
               />
-              <div className="absolute bottom-0 left-0 right-0 bg-slate-900 bg-opacity-90 text-white text-center py-2">
+              <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-90 text-white text-center py-2">
                 챔피언 로테이션
               </div>
             </div>
