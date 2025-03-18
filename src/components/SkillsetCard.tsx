@@ -1,20 +1,25 @@
-import { ChampionSkillset } from "@/types/ChampionDetail"
 import React from "react"
-import { SPELLS_IMAGE_BASE_URL } from "@/constants"
 import Image from "next/image"
+import { Card, CardHeader, CardTitle, CardContent, CardDescription } from "@/components/ui/card"
+import { ChampionSkillset } from "@/types/ChampionDetail"
+import { SPELLS_IMAGE_BASE_URL } from "@/constants"
 
 const SkillsetCard = ({ skill }: { skill: ChampionSkillset }) => {
   return (
-    <div>
-      <h3>{skill.name}</h3>
-      <Image
-        src={`${SPELLS_IMAGE_BASE_URL}${skill.image.full}`}
-        alt="제공 이미지가 없습니다."
-        width={50}
-        height={50}
-      />
-      <p>{skill.description}</p>
-    </div>
+    <Card className="p-4 text-center">
+      <CardHeader>
+        <CardTitle>{skill.name}</CardTitle>
+      </CardHeader>
+      <CardContent className="flex flex-col items-center">
+        <Image
+          src={`${SPELLS_IMAGE_BASE_URL}${skill.image.full}`}
+          alt={skill.name}
+          width={50}
+          height={50}
+        />
+        <CardDescription className="mt-2 text-sm text-center">{skill.description}</CardDescription>
+      </CardContent>
+    </Card>
   )
 }
 
