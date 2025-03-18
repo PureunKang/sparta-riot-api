@@ -7,7 +7,10 @@ const ChampionPage = async () => {
 
   return (
     <>
-      <ChampionCard championList={championList} />
+      <div className="container mx-auto p-6">
+        <h1 className="text-2xl font-bold mb-4">챔피언 목록</h1>
+        <ChampionCard championList={championList} />
+      </div>
     </>
   )
 }
