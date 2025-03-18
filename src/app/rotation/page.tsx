@@ -9,6 +9,7 @@ const RotationPage = () => {
 
   if (isPending) return <div>로딩중</div>
   if (isError) return <div>불러오기 실패</div>
+  if (!champions) return <div>데이터가 없습니다.</div>
 
   return (
     <>

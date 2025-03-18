@@ -1,10 +1,5 @@
+import { SelectedChampion } from "@/types/Champion"
 import { useQuery } from "@tanstack/react-query"
-
-type SelectedChampion = {
-  name: string
-  title: string
-  image: string
-}
 
 const useChampions = () => {
   return useQuery<SelectedChampion[]>({

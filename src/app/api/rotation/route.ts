@@ -1,6 +1,5 @@
 import { Champion } from "@/types/Champion"
 import { NextResponse } from "next/server"
-import { SelectedChampion } from "@/types/Champion"
 
 export async function GET() {
   // 이달의 챔피언 키값 불러오기
@@ -25,9 +24,7 @@ export async function GET() {
   // 불러온 챔피언 데이터에서 일치하는 키값 골라내기
   const championInfo = championIds
     .map((champId) => {
-      const selectedChampion = allChampions.find(
-        (champ: SelectedChampion) => champ.key === String(champId),
-      )
+      const selectedChampion = allChampions.find((champ) => champ.key === String(champId))
       if (selectedChampion) {
         return {
           key: selectedChampion.key,
