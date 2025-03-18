@@ -1,10 +1,8 @@
 "use client"
 
 import React from "react"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import Image from "next/image"
-import { CHAMPION_IMAGE_BASE_URL } from "@/constants"
 import useChampions from "@/hooks/queries"
+import RotationCard from "@/components/RotationCard"
 
 const RotationPage = () => {
   const { data: champions, isPending, isError } = useChampions()
@@ -14,24 +12,12 @@ const RotationPage = () => {
 
   return (
     <>
-      {champions.map((c) => {
-        return (
-          <Card key={c.name}>
-            <CardHeader>
-              <CardTitle>{c.name}</CardTitle>
-              <CardDescription>{c.title}</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <Image
-                src={`${CHAMPION_IMAGE_BASE_URL}${c.image}`}
-                alt="제공 이미지가 없습니다."
-                width={50}
-                height={50}
-              />
-            </CardContent>
-          </Card>
-        )
-      })}
+      <div className="container mx-auto p-6">
+        <div className="text-center mb-8">
+          <p className="text-gray-700">이번 주 무료 챔피언</p>
+        </div>
+        <RotationCard champions={champions} />
+      </div>
     </>
   )
 }

@@ -43,3 +43,7 @@ export type Champion = {
     attackspeed: number
   }
 }
+
+export type SelectedChampion = Pick<Champion, "key" | "id" | "name" | "title"> & {
+  image: string
+}
