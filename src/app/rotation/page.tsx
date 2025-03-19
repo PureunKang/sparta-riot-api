@@ -3,11 +3,12 @@
 import React from "react"
 import useChampions from "@/hooks/queries"
 import RotationCard from "@/components/RotationCard"
+import Loading from "../loading"
 
 const RotationPage = () => {
   const { data: champions, isPending, isError } = useChampions()
 
-  if (isPending) return <div>로딩중</div>
+  if (isPending) return <Loading />
   if (isError) return <div>불러오기 실패</div>
   if (!champions) return <div>데이터가 없습니다.</div>
 
